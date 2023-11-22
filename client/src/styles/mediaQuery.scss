@@ -1,0 +1,36 @@
+@import "./var";
+
+@media screen and (max-width: 900px) {
+    nav {
+        >.menu{
+            width: 58%;
+        }
+    }    
+}
+
+@media screen and (max-width: 700px) {
+    nav {
+        z-index: 1000;
+        >.menu {
+          position: absolute;
+          bottom: -40vh;
+          right: -100vh;
+        }
+        > .menu-mob {
+            position: absolute;
+            right: 0;
+            top: 3rem;
+            justify-content: space-evenly;
+            flex-direction: column;
+            background: $color_black;
+
+            color: $color_white;
+            height: 60vh;
+            transition: right 0.3s ease; 
+            
+        }
+        > .ham {
+            display: block;
+        }
+    }
+}

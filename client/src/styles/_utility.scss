@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    overflow: hidden;
+}
+
+@mixin displayFlex($justifycontent,$align,$dir){
+    display: flex;
+    justify-content: $justifycontent;
+    align-items: $align;
+    flex-direction: $dir;
+}

@@ -1,0 +1,44 @@
+@import './utility';
+@import "./var";
+
+
+nav{
+    @include displayFlex(space-around,center,row);
+    
+    width: 100vw;
+    height: 3rem;
+    background-color: $color_pri;
+    color: $color_white;
+
+    text-transform: capitalize;
+    
+
+    >.logo{
+        font-family: $font_family_pri;
+        font-size: 19px;
+    }
+    >.menu{
+        @include displayFlex(space-between,center,row);
+        
+        >a{
+            color: $color_white;
+        }
+        width: 40%;
+        font-family: $font_family_sec;
+        transition: all 0.3s ease-in-out; 
+
+        >li{
+            cursor: pointer;
+            transition: all ease-in-out .2s;
+            &:hover{
+                color: $color_light;
+            }
+        }
+
+    }
+    >.ham{
+        display: none;
+    }
+}
+
+
