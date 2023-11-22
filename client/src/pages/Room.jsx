@@ -57,7 +57,7 @@ const Room = () => {
     return () => clearInterval(interval);
   }, [creatingRoom]);
 
-  return isAuthenticated ? (
+  return !isAuthenticated ? (
     <Login />
   ) : (
     <>
