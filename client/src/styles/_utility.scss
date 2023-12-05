@@ -1,24 +1,38 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-li{
+li {
     list-style: none;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-body{
+body {
     overflow: hidden;
 }
 
-@mixin displayFlex($justifycontent,$align,$dir){
+@mixin displayFlex($justifycontent, $align, $dir) {
     display: flex;
     justify-content: $justifycontent;
     align-items: $align;
     flex-direction: $dir;
+}
+
+@mixin btnReset() {
+    outline: 0;
+    background: none;
+    border: none;
+}
+
+@mixin btnPri($clr,$bg_clr,$ht) {
+    color: $clr;
+    background-color: $bg_clr;
+    width: 7rem;
+    height: $ht;
+    border-radius: .3rem
 }

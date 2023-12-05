@@ -6,17 +6,12 @@ import {LandingPage} from './pages/index';
 const App = () => {
   const { isAuthenticated } = useAuth0();
 
-  return isAuthenticated ? (
-    <>
-      <Nav isAuthenticate={isAuthenticated} />
-      <LandingPage />    
-    </>
-  ) : (
-    <>
-      <Nav isAuthenticate={isAuthenticated} />
-      <LandingPage />    
-    </>
-  );
+  return (
+      <>
+        <Nav isAuthenticate={isAuthenticated} />
+        <LandingPage />   
+      </>
+  )
 };
 
 export default App;

@@ -27,6 +27,7 @@
             color: $color_white;
             height: 60vh;
             transition: right 0.3s ease; 
+            z-index: 999;
             
         }
         > .ham {

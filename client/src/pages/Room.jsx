@@ -68,25 +68,29 @@ const Room = () => {
           <Chat roomid={joinedRoomId} />
         ) : (
           <>
-            <button onClick={() => setCreateRoomToggler((prev) => !prev)} className="toggler">
+            <button  onClick={() => setCreateRoomToggler((prev) => !prev)} className="toggler-btn">
               {createRoomToggler ? 'Join?' : 'Create Room?'}
             </button>
 
             {createRoomToggler ? (
-              <button disabled={creatingRoom} onClick={handleCreateRoom}>
-                {creatingRoom ? `Creating Room... (${countdown}s)` : 'Create Room'}
+              <button className='create_room_btn'  disabled={creatingRoom} onClick={handleCreateRoom}>
+                {creatingRoom ? `Creating Room... (${countdown}s)` : 'Create Roomm'}
               </button>
             ) : (
               <>
-                <label htmlFor="roomid">Enter Room Id</label>
-                <input
-                  type="text"
-                  name="roomid"
-                  id="roomid"
-                  value={inputRoomId}
-                  onChange={(e) => setinputRoomId(e.target.value)}
-                />
-                <button onClick={handleJoinRoom}>Join</button>
+                <div className="join_room_container">
+                  <label className='room_id' htmlFor="roomid">Enter Room Id: </label>
+                  <input
+                    className="room_id_input"
+                    type="text"
+                    name="roomid"
+                    id="roomid"
+                    value={inputRoomId}
+                    onChange={(e) => setinputRoomId(e.target.value)}
+                    placeholder='Enter Room Id'
+                  />
+                  <button className='join_btn' onClick={handleJoinRoom}>Join</button>
+                </div>
               </>
             )}
           </>

@@ -4,29 +4,23 @@
 
 nav{
     @include displayFlex(space-around,center,row);
-    
     width: 100vw;
     height: 3rem;
     background-color: $color_pri;
     color: $color_white;
-
     text-transform: capitalize;
-    
-
     >.logo{
         font-family: $font_family_pri;
         font-size: 19px;
     }
     >.menu{
         @include displayFlex(space-between,center,row);
-        
         >a{
             color: $color_white;
         }
         width: 40%;
         font-family: $font_family_sec;
         transition: all 0.3s ease-in-out; 
-
         >li{
             cursor: pointer;
             transition: all ease-in-out .2s;
@@ -34,7 +28,6 @@ nav{
                 color: $color_light;
             }
         }
-
     }
     >.ham{
         display: none;
@@ -42,3 +35,153 @@ nav{
 }
 
 
+.room_container{
+    @include displayFlex(center,center,column);
+    position: relative;
+    background-image: url("../assets/chatBg.jpg");
+    background-size: cover;
+
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+    
+
+    >.toggler-btn{
+        @include btnReset;
+        @include btnPri($color_white,$color_pri,2rem);
+        position: absolute;
+        top: 4rem;
+        
+    }
+    >.create_room_btn{
+        @include btnReset;
+        @include btnPri($color_pri,$color_white,2rem);
+    }
+    >.join_room_container{
+        @include displayFlex(space-evenly,center,column);
+        position: relative;
+       width: 20rem;
+       height: 25rem;
+       background: #dddddd68;
+       filter: blur(2);
+       border-radius: .4rem;
+        >.room_id{
+            position: absolute;  
+            top: 7rem; 
+        }
+        >.room_id_input{
+            @include btnReset;
+            border-bottom: 2px solid $color_pri;
+
+        }
+        >.join_btn{
+            @include btnReset;
+            @include btnPri($color_pri,$color_white,2rem);
+            position: absolute;  
+            bottom: 7rem; 
+        }
+    }
+}
+
+
+.app{
+    @include displayFlex(space-between,center,row);
+    flex-direction: column;
+    // position: relative;
+    width: 100vw;
+    >h1{
+        position: absolute;
+        bottom: 90%;
+        font-size: 1.2rem;
+        left: 16%;
+    }
+    >.data{
+        @include displayFlex(space-evenly,center,row);
+        background-image: url("../assets/chatBg.jpg");
+        object-fit: contain;
+        flex-direction: column;
+        position: absolute;
+        bottom: 30%;
+        left: 16%;
+
+        overflow-y:  scroll;
+       
+        
+        width: 60vw;
+        height: 60vh;
+        max-height: 62vh;
+        margin-top: 4rem;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        
+        li{
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            display: flex;
+            place-items: center;
+            background: $color_pri;
+            padding: 1rem;
+            width: max-content;
+            text-align: left;
+            border-radius: .7rem 1rem 1rem 0rem;
+            height: 2.3rem;
+
+            margin-left: 10%;
+            margin: .4rem;
+        }
+        .myMessage{
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            position: sticky;
+            right: 0;
+            left: 100%;
+            border-radius: 1rem 1rem .1rem 1rem;
+
+
+        }
+    }
+    >.input_container{
+        @include displayFlex(space-evenly,center,row);
+
+        width: 100vw;
+        height: 4rem;
+
+        position: absolute;
+        bottom: 11%;
+        left: 0;
+        >input{
+            @include btnReset();
+            width: 80%;
+            height: 3.5rem;
+            background: #fff;
+            border-radius: .5rem;
+            border: 2px solid $color_pri;
+
+        }
+        >button{
+            @include btnReset();
+             @include btnPri($color_white,$color_pri,3.5rem);
+            
+        }
+    }
+}
+
+.logoutContainer{
+    @include displayFlex(center,center,row);
+    width: 100vw;
+    height: 100vh;
+
+    background: url("../assets/chatBg.jpg");
+    background-size: cover;
+    >button{
+        @include btnReset();
+        @include btnPri($color_pri,$color_white,2rem);
+    }
+
+}
+.loginContainer{
+    
+}

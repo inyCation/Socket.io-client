@@ -6,12 +6,14 @@ import { Nav } from '../components';
 const Login = () => {
 
   const { user, loginWithRedirect, isAuthenticated, logout } = useAuth0();
-  console.log("user: ", user)
+  
 
   return !isAuthenticated ? (
     <>
        <Nav isAuthenticate={isAuthenticated} />
-      <button onClick={() => loginWithRedirect()} > Login </button>
+     <div className='logoutContainer' >
+       <button onClick={() => loginWithRedirect()} > Login </button>
+    </div>
     </>
   ) : (
     ""
