@@ -182,6 +182,29 @@ nav{
     }
 
 }
-.loginContainer{
-    
+
+.landingPageContainer{
+    @include displayFlex(center,center,row);
+    width: 100vw;
+    height: 100vh;
+
+    background: url("../assets/landingBg.jpg");
+    background-size: cover;
+    color: $color_white;
+    >h1{
+        position: absolute;
+        top: 8rem;
+        left: 5rem;
+        font-size: 3rem;
+        font-family: $font_family_sec;
+    }
+    >h4{
+        margin-top: 4rem;
+        font-size: 2rem;
+        font-family: $font_family_sec;
+
+        position: absolute;
+        top: 12rem;
+        left: 12rem;
+    }
 }
